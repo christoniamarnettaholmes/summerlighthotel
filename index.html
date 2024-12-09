@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>夏の光 | 穏やかな休息の隠れ家</title>
+
+
+  <!-- Styles -->
+  <style>
+    /* Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Modal Header */
+    .modal-header {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-bottom: 10px;
+      /* margin-left: 15px; */
+    }
+
+    .modal-header h2 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    /* Close Button */
+    .close-btn {
+      font-size: 2.5rem;
+      color: #000;
+      cursor: pointer;
+      margin-left: 60px;
+    }
+
+    .close-btn:hover {
+      color: red;
+    }
+
+    /* Modal Body */
+    .modal-body {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .modal-body .modal-image {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    /* Show Modal */
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- Modal Structure -->
+  <div id="restaurant-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>特別なお知らせ</h2>
+        <span class="close-btn" id="close-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <img src="assets/header2.png" alt="Hotel Image" class="modal-image">
+        <p>夏の光へようこそ！</p>
+        <p>🎉 期間限定オファー：3泊以上のご予約で特別割引！</p>
+        <p>📅 営業時間: チェックイン 15:00～20:00 / チェックアウト 10:00</p>
+        <p>日本の美しい景観と共に、静かで贅沢なひとときをお楽しみください。夏の光では、心温まるおもてなしと最高の滞在を提供いたします。</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <header class="header">
+    <nav>
+      <div class="nav__bar">
+        <div class="logo">
+          <a href="#">夏の光</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#home">ホーム</a></li>
+        <li><a href="#about">私たちについて</a></li>
+        <li><a href="#service">サービス</a></li>
+        <li><a href="#explore">探索</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+      <button class="btn nav__btn">今すぐ予約</button>
+    </nav>
+    <div class="section__container header__container" id="home">
+      <p>暖かく - 心地よく - 特別な体験</p>
+      <h1>贅沢なひとときを<br />夏の光で。</h1>
+    </div>
+  </header>
+
+  <section class="section__container booking__container">
+    <form action="#" class="booking__form">
+      <div class="input__group">
+        <span><i class="ri-calendar-2-fill"></i></span>
+        <div>
+          <label for="check-in">チェックイン</label>
+          <input type="text" placeholder="チェックイン日を選択" />
+        </div>
+      </div>
+      <div class="input__group">
+        <span><i class="ri-calendar-2-fill"></i></span>
+        <div>
+          <label for="check-out">チェックアウト</label>
+          <input type="text" placeholder="チェックアウト日を選択" />
+        </div>
+      </div>
+      <div class="input__group">
+        <span><i class="ri-user-fill"></i></span>
+        <div>
+          <label for="guest">宿泊人数</label>
+          <input type="text" placeholder="宿泊人数を入力" />
+        </div>
+      </div>
+      <div class="input__group input__btn">
+        <button class="btn">空室を確認</button>
+      </div>
+    </form>
+  </section>
+
+
+  <section class="section__container about__container" id="about">
+    <div class="about__image">
+      <img src="assets/about.jpg" alt="夏の光について" />
+    </div>
+    <div class="about__content">
+      <p class="section__subheader">私たちについて</p>
+      <h2 class="section__header">理想的な隠れ家がここに！</h2>
+      <p class="section__description">
+        夏の光は、日本の美しい自然と和の魅力が融合した特別な空間を提供しています。静かな環境と贅沢な設備で、お客様にとって忘れられないリラックスした時間をお届けします。四季折々の風景とともに、心温まるおもてなしをお楽しみください。
+      </p>
+      <div class="about__btn">
+        <button class="btn">詳しく見る</button>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section__container room__container">
+    <p class="section__subheader">客室のご案内</p>
+    <h2 class="section__header">贅沢とスタイルでリラックス。</h2>
+    <div class="room__grid">
+      <div class="room__card">
+        <div class="room__card__image">
+          <img src="assets/room-1.jpg" alt="デラックスオーシャンビュー" />
+          <div class="room__card__icons">
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-paint-fill"></i></span>
+            <span><i class="ri-shield-star-line"></i></span>
+          </div>
+        </div>
+        <div class="room__card__details">
+          <h4>デラックスオーシャンビュー</h4>
+          <p>
+            プライベートスイートから望む壮大な海の景色とともに、贅沢なひとときをお楽しみください。
+          </p>
+          <h5>料金：<span>¥39,800/泊～</span></h5>
+          <button class="btn">今すぐ予約</button>
+        </div>
+      </div>
+      <div class="room__card">
+        <div class="room__card__image">
+          <img src="assets/room-2.jpg" alt="エグゼクティブシティルーム" />
+          <div class="room__card__icons">
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-paint-fill"></i></span>
+            <span><i class="ri-shield-star-line"></i></span>
+          </div>
+        </div>
+        <div class="room__card__details">
+          <h4>エグゼクティブシティルーム</h4>
+          <p>
+            モダンな快適さと都市の洗練された雰囲気をお楽しみください。
+          </p>
+          <h5>料金：<span>¥26,800/泊～</span></h5>
+          <button class="btn">今すぐ予約</button>
+        </div>
+      </div>
+      <div class="room__card">
+        <div class="room__card__image">
+          <img src="assets/room-3.jpg" alt="ファミリーガーデンリトリート" />
+          <div class="room__card__icons">
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-paint-fill"></i></span>
+            <span><i class="ri-shield-star-line"></i></span>
+          </div>
+        </div>
+        <div class="room__card__details">
+          <h4>ファミリーガーデンリトリート</h4>
+          <p>
+            ご家族や大切な人との思い出を作るのに最適な広々とした空間をご提供します。
+          </p>
+          <h5>料金：<span>¥33,800/泊～</span></h5>
+          <button class="btn">今すぐ予約</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="service" id="service">
+    <div class="section__container service__container">
+      <div class="service__content">
+        <p class="section__subheader">サービス</p>
+        <h2 class="section__header">細部へのこだわりが光るおもてなし。</h2>
+        <ul class="service__list">
+          <li>
+            <span><i class="ri-shield-star-line"></i></span>
+            高水準のセキュリティ
+          </li>
+          <li>
+            <span><i class="ri-24-hours-line"></i></span>
+            24時間ルームサービス
+          </li>
+          <li>
+            <span><i class="ri-headphone-line"></i></span>
+            会議室のご利用
+          </li>
+          <li>
+            <span><i class="ri-map-2-line"></i></span>
+            観光ガイドサポート
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section__container banner__container">
+    <div class="banner__content">
+      <div class="banner__card">
+        <h4>25+</h4>
+        <p>利用可能な宿泊施設</p>
+      </div>
+      <div class="banner__card">
+        <h4>350+</h4>
+        <p>完了したご予約</p>
+      </div>
+      <div class="banner__card">
+        <h4>600+</h4>
+        <p>満足したお客様</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="explore" id="explore">
+    <p class="section__subheader">探訪</p>
+    <h2 class="section__header">新しい発見をお楽しみください。</h2>
+    <div class="explore__bg">
+      <div class="explore__content">
+        <p class="section__description">2024年3月10日</p>
+        <h4>新しい料理の驚きがあなたを待っています！</h4>
+        <button class="btn">詳しく見る</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="contact">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <div class="logo">
+          <a href="#home">夏の光</a>
+        </div>
+        <p class="section__description">
+          夏の光で、快適さ、贅沢さ、冒険を体験してください。日本の美しい風景の中で、忘れられない思い出を作りましょう。
+        </p>
+        <button class="btn">今すぐ予約</button>
+      </div>
+      <div class="footer__col">
+        <h4>クイックリンク</h4>
+        <ul class="footer__links">
+          <li><a href="#">目的地を探す</a></li>
+          <li><a href="#">特別オファー＆パッケージ</a></li>
+          <li><a href="#">客室の種類とアメニティ</a></li>
+          <li><a href="#">お客様のレビュー＆評価</a></li>
+          <li><a href="#">旅行のヒント＆ガイド</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>私たちのサービス</h4>
+        <ul class="footer__links">
+          <li><a href="#">コンシェルジュサービス</a></li>
+          <li><a href="#">柔軟な予約オプション</a></li>
+          <li><a href="#">空港送迎</a></li>
+          <li><a href="#">ウェルネス＆レクリエーション</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>お問い合わせ</h4>
+        <ul class="footer__links">
+          <li><a href="mailto:info@sunlightinnjapan.com">info@sunlightinnjapan.com</a></li>
+        </ul>
+        <div class="footer__socials">
+          <a href="#"><img src="assets/facebook.png" alt="facebook" /></a>
+          <a href="#"><img src="assets/instagram.png" alt="instagram" /></a>
+          <a href="#"><img src="assets/youtube.png" alt="youtube" /></a>
+          <a href="#"><img src="assets/twitter.png" alt="twitter" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2024 夏の光. All rights reserved.
+    </div>
+  </footer>
+
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="main.js"></script>
+
+  <script>
+    // Modal Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('restaurant-modal');
+
+      // Show modal on page load
+      setTimeout(() => modal.classList.add('active'), 500); // Add a slight delay for animation
+
+      // Close modal when clicking anywhere
+      modal.addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>
